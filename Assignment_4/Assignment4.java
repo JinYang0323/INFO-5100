@@ -2,20 +2,20 @@ import java.util.*;
 public class Assignment4 {
 	
 	public static void main(String[] args) {
-		//System.out.println(firstUniqChar("leetcode"));
+		System.out.println(firstUniqChar("leetcode"));
 		
-		//System.out.println(addDigits(3456789));
+		System.out.println(addDigits(3456789));
 		
-		//int[] nums = {0, 1, 0, 3, 12};
-		//moveZeroes(nums);
+		int[] nums = {0, 1, 0, 3, 12};
+		moveZeroes(nums);
 		
 		System.out.println(longestPalindrome("babad"));
 		
-		//int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
-		//int[][] matrixRotate = rotate(matrix);
-		//for(int i = 0; i < matrix.length; i++) 
-    		//for(int j = 0; j < matrix.length; j++) 
-    			//System.out.print(matrixRotate[i][j] + " ");
+		int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+		int[][] matrixRotate = rotate(matrix);
+		for(int i = 0; i < matrix.length; i++) 
+    		for(int j = 0; j < matrix.length; j++) 
+    			System.out.print(matrixRotate[i][j] + " ");
 	}
 	
 	/*
