@@ -1,21 +1,28 @@
 import java.util.*;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 public class Assignment4 {
 	
-	public static void main(String[] args) {
-		System.out.println(firstUniqChar("leetcode"));
-		
-		System.out.println(addDigits(3456789));
-		
-		int[] nums = {0, 1, 0, 3, 12};
-		moveZeroes(nums);
-		
-		System.out.println(longestPalindrome("babad"));
-		
-		int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
-		int[][] matrixRotate = rotate(matrix);
-		for(int i = 0; i < matrix.length; i++) 
-    		for(int j = 0; j < matrix.length; j++) 
-    			System.out.print(matrixRotate[i][j] + " ");
+	@Test
+	void test() {
+		 assertEquals(firstUniqChar("leetcode"), 0);
+		 assertEquals(firstUniqChar("loveleetcode"), 2);
+		 
+		 assertEquals(addDigits(38), 2);
+		 assertEquals(addDigits(3456789), 6);
+		 
+		 int[] a = {0, 1, 0, 3, 12};
+		 int[] b = {1, 3, 12, 0, 0};
+		 moveZeroes(a);
+		 assertArrayEquals(a, b);
+		 
+		 assertEquals(longestPalindrome("babad"), "bab");
+		assertEquals(longestPalindrome("banana"), "anana");
+		 
+		 int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};			
+		 int[][] matrixRotate = {{13, 9, 5, 1}, {14, 10, 6, 2}, {15, 11, 7, 3}, {16, 12, 8, 4}};
+		 assertArrayEquals(rotate(matrix), matrixRotate);
+		 
 	}
 	
 	/*
