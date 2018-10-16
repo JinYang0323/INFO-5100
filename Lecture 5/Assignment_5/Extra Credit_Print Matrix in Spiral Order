@@ -1,0 +1,37 @@
+import java.lang.*;
+import java.util.ArrayList;
+import java.util.List;
+public class ExtraCredit_SpiralOrder {
+	public static void main(String[] args) {
+		int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+		int[][] matrix1 = {{1, 2, 3}};
+		int[][] matrix2 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+		System.out.println(spiralOrder(matrix));
+		System.out.println(spiralOrder(matrix1));
+		System.out.println(spiralOrder(matrix2));
+	}
+	public static List<Integer> spiralOrder(int[][] matrix){
+		List<Integer> list = new ArrayList<>();
+        if(matrix.length == 0) return list;
+        if(matrix.length == 1) {
+            for(int i = 0; i < matrix[0].length; i++)
+                list.add(matrix[0][i]);
+            return list;
+        }
+        for(int count = 0; count <= matrix.length / 2 && count <= matrix.length / 2; count++){
+            if(matrix.length % 2 == 0 && count == matrix.length / 2) break;
+            if(matrix[0].length % 2 == 0 && count == matrix[0].length / 2) break;
+            int i = count, j = count;
+            for(; j < matrix[0].length - count; j++)
+                list.add(matrix[i][j]);
+            for(j--, i++; i < matrix.length - count; i++)
+                list.add(matrix[i][j]);
+            if(count == matrix.length / 2 || count == matrix[0].length / 2) break;
+            for(i--, j--; j >= count; j--)
+                list.add(matrix[i][j]);
+            for(j++, i--; i > count; i--)
+                list.add(matrix[i][j]);
+        }        
+        return list;
+	}
+}
